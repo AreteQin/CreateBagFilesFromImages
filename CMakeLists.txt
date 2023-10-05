@@ -14,4 +14,7 @@ main.cc
 Thirdparty/DLib/FileFunctions.cpp)
 
 target_link_libraries (${PROJECT_NAME}
+console_bridge)
+
+target_link_libraries (${PROJECT_NAME}
 ${OpenCV_LIBS})

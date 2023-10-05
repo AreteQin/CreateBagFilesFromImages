@@ -49,7 +49,7 @@ int main(int argc, char **argv)
         if(!ros::ok())
             break;
 
-        cv::Mat im = cv::imread(filenames[i],CV_LOAD_IMAGE_COLOR);
+        cv::Mat im = cv::imread(filenames[i],cv::IMREAD_COLOR);
         cv_bridge::CvImage cvImage;
         cvImage.image = im;
         cvImage.encoding = sensor_msgs::image_encodings::RGB8;
