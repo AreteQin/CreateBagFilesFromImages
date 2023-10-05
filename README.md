@@ -6,16 +6,6 @@ The bag will publish the images to topic `/camera/image_raw`.
 
 Tested in ROS Noetic.
 
-## Installation
-
-In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
-
-    cd BagFromImages
-    mkdir build
-    cd build
-    cmake ..
-    make
-
 ## Usage:
 
     rosrun BagFromImages BagFromImages PATH_TO_IMAGES IMAGE_EXTENSION FREQUENCY PATH_TO_OUPUT_BAG
