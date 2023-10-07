@@ -53,11 +53,13 @@
   <build_depend>sensor_msgs</build_depend>
   <build_depend>rosbag</build_depend>
   <build_depend>cv_bridge</build_depend>
+  <build_depend>vision_msgs</build_depend>
 
   <exec_depend>roscpp</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>rosbag</exec_depend>
   <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>vision_msgs</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

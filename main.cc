@@ -26,8 +26,7 @@ int main(int argc, char **argv) {
     ros::start();
 
     // Vector of paths to image
-    vector<string> filenames =
-            DUtils::FileFunctions::Dir(argv[1], argv[2], true);
+    vector<string> filenames = DUtils::FileFunctions::Dir(argv[1], argv[2], true);
 
     cout << "Images: " << filenames.size() << endl;
 

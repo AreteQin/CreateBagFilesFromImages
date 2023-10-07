@@ -6,6 +6,10 @@ The bag will publish the images to topic `/camera/image_raw`.
 
 Tested in ROS Noetic.
 
+## Dependencies:
+
+`sudo apt install ros-noetic-vision-msgs`
+
 ## Usage:
 
     rosrun BagFromImages BagFromImages PATH_TO_IMAGES IMAGE_EXTENSION FREQUENCY PATH_TO_OUPUT_BAG

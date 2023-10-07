@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
         rosbag
         cv_bridge
         image_transport
+        vision_msgs
 )
 
 include_directories(
@@ -22,6 +23,15 @@ add_executable(${PROJECT_NAME}
         Thirdparty/DLib/FileFunctions.cpp)
 
 target_link_libraries(${PROJECT_NAME}
+        console_bridge
+        ${OpenCV_LIBS}
+        ${catkin_LIBRARIES})
+
+add_executable(video_with_boxes
+        video_with_boxes.cpp
+        Thirdparty/DLib/FileFunctions.cpp)
+
+target_link_libraries(video_with_boxes
         console_bridge
         ${OpenCV_LIBS}
         ${catkin_LIBRARIES})
