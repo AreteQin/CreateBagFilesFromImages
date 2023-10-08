@@ -85,20 +85,22 @@ int main(int argc, char **argv) {
             detections.detections.push_back(detection);
         }
         // draw rectangular boxes on image
-        for (size_t i = 0; i < detections.detections.size(); i++) {
-            cv::Point2f center(detections.detections[i].bbox.center.x, detections.detections[i].bbox.center.y);
-            cv::Size2f size(detections.detections[i].bbox.size_x, detections.detections[i].bbox.size_y);
-            cv::RotatedRect rect(center, size, 0);
-            cv::Point2f vertices[4];
-            rect.points(vertices);
-            for (int i = 0; i < 4; i++)
-                cv::line(im, vertices[i], vertices[(i + 1) % 4], cv::Scalar(0, 255, 0));
-        }
+//        for (size_t i = 0; i < detections.detections.size(); i++) {
+//            cv::Point2f center(detections.detections[i].bbox.center.x, detections.detections[i].bbox.center.y);
+//            cv::Size2f size(detections.detections[i].bbox.size_x, detections.detections[i].bbox.size_y);
+//            cv::RotatedRect rect(center, size, 0);
+//            cv::Point2f vertices[4];
+//            rect.points(vertices);
+//            for (int i = 0; i < 4; i++)
+//                cv::line(im, vertices[i], vertices[(i + 1) % 4], cv::Scalar(0, 255, 0));
+//        }
         cv_bridge::CvImage cvImage;
         cvImage.image = im;
         cvImage.encoding = sensor_msgs::image_encodings::RGB8;
         cvImage.header.stamp = t;
-        bag_out.write("/camera/image_raw", ros::Time(t), cvImage.toImageMsg());
+        // write bounding boxes to bag
+        bag_out.write("/bounding_boxes/fire_spots", ros::Time(t), detections);
+        bag_out.write("/dji_osdk_ros/main_camera_images", ros::Time(t), cvImage.toImageMsg());
         t += d;
         cout << i << " / " << image_filenames.size() << endl;
     }
