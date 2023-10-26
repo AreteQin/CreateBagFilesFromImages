@@ -98,6 +98,7 @@ int main(int argc, char **argv) {
         cvImage.image = im;
         cvImage.encoding = sensor_msgs::image_encodings::RGB8;
         cvImage.header.stamp = t;
+        detections.header.stamp = t;
         // write bounding boxes to bag
         bag_out.write("/bounding_boxes/fire_spots", ros::Time(t), detections);
         bag_out.write("/dji_osdk_ros/main_camera_images", ros::Time(t), cvImage.toImageMsg());
