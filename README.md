@@ -19,3 +19,7 @@ Tested in ROS Noetic.
  - `FREQUENCY`: Frames per second.
  - `PATH_TO_OUTPUT_BAG`: Path to save the bag (including the filename e.g. directory/filename.bag)
 
+```angular2html
+/home/qin/Downloads/ForDistanceEstimation/Frames png 5 /home/qin/Downloads/ForDistanceEstimation/out_without_boxes_5FPS.bag
+/home/qin/Downloads/ForDistanceEstimation/20232018/02_frames png 10 /home/qin/Downloads/ForDistanceEstimation/out_without_boxes_10FPS.bag
+```

@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
 //        }
         cv_bridge::CvImage cvImage;
         cvImage.image = im;
-        cvImage.encoding = sensor_msgs::image_encodings::RGB8;
+        cvImage.encoding = sensor_msgs::image_encodings::BGR8;
         cvImage.header.stamp = t;
         detections.header.stamp = t;
         // write bounding boxes to bag
