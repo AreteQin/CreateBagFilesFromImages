@@ -35,3 +35,12 @@ target_link_libraries(video_with_boxes
         console_bridge
         ${OpenCV_LIBS}
         ${catkin_LIBRARIES})
+
+add_executable(video_with_GPS
+        video_with_GPS.cpp
+        Thirdparty/DLib/FileFunctions.cpp)
+
+target_link_libraries(video_with_GPS
+        console_bridge
+        ${OpenCV_LIBS}
+        ${catkin_LIBRARIES})
