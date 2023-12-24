@@ -44,3 +44,12 @@ target_link_libraries(video_with_GPS
         console_bridge
         ${OpenCV_LIBS}
         ${catkin_LIBRARIES})
+
+add_executable(video_with_depth
+        video_with_depth.cc
+        Thirdparty/DLib/FileFunctions.cpp)
+
+target_link_libraries(video_with_depth
+        console_bridge
+        ${OpenCV_LIBS}
+        ${catkin_LIBRARIES})
